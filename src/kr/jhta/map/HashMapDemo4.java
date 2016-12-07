@@ -9,7 +9,7 @@ public class HashMapDemo4 {
 
 		/*
 		 * 서로 다른 타입의 값을 담는 Map객체 만들기
-		 * 값의 타입이 String,Integer,Double, Date 혹은 객체
+		 * 값의 타입이 String, Integer, Double, Date 혹은 객체
 		 */
 		HashMap<String, Object> map = new HashMap<>();
 		map.put("name", "홍길동");			// <String, String>

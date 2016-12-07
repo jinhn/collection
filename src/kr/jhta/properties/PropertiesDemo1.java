@@ -28,5 +28,9 @@ public class PropertiesDemo1 {
 
 		String value = prop.getProperty("mail.host");
 		System.out.println(value);
+		
+		// mail.port값이 없으면 111출력
+		String port = prop.getProperty("mail.port", "111");
+		System.out.println(port);
 	}
 }

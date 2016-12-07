@@ -5,6 +5,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
+/**
+ * <p>도서 대여점의 주요 기능을 구현한 클래스
+ * 
+ * <p>도서 대여점의 회원가입, 로그인, 로그아웃, 대여, 반납, 조회기능을 구현
+ * @author 홍길동
+ *
+ */
 public class BookStore {
 
 	Scanner sc = new Scanner(System.in);
@@ -16,6 +23,11 @@ public class BookStore {
 	// 로그인된 고객정보
 	private Customer loginedUser = null;
 
+	/**
+	 * <p>도서대여점의 기본 생성자
+	 * 
+	 * <p>객체 생성시 기본적으로 고객 한명의 정보와 책 10권을 각각 등록한다.
+	 */
 	public BookStore() {
 		Customer cus = new Customer();
 		cus.setId("hong");
@@ -52,6 +64,9 @@ public class BookStore {
 		return isExist;
 	}
 
+	/**
+	 * <p>회원가입
+	 */
 	// 고객정보 입력받기
 	public void register() { // 2
 		// 고객정보를 customer객체에 담기
@@ -85,7 +100,10 @@ public class BookStore {
 
 	// 로그인의 목적
 	// 사용자의 식별정보를 담아두기위해서(로그인의 중복 방지)
-
+	
+	/**
+	 * <p>로그인 기능
+	 */
 	// 로그인 기능
 	public void login() { // 1
 		// 중복 로그인 금지
@@ -119,6 +137,9 @@ public class BookStore {
 		}
 	}
 
+	/**
+	 * <p>로그아웃 기능
+	 */
 	public void logout() { // 7
 		if (loginedUser != null) {
 			System.out.println("로그아웃되었습니다.");
@@ -126,6 +147,9 @@ public class BookStore {
 		}
 	}
 
+	/**
+	 * <p>도서조회 기능
+	 */
 	public void displayBooks() { // 3
 		System.out.printf("%s\t%-30s%-8s\n", "번호", "제목", "가격");
 		System.out.printf("------------------------------------------------\n");
@@ -133,7 +157,10 @@ public class BookStore {
 			System.out.printf("%d\t%-30s%-4d\n", book.getNo(), book.getTitle(), book.getPrice());
 		}
 	}
-
+	
+	/**
+	 * <p>대여 기능
+	 */
 	public void rental() { // 4
 
 		if (loginedUser == null) {
@@ -158,7 +185,10 @@ public class BookStore {
 
 		rentalList.add(rent);
 	}
-
+	
+	/**
+	 * <p>대여내역조회 기능
+	 */
 	public void rentalList() { // 6
 
 		if (loginedUser == null) {
@@ -182,7 +212,10 @@ public class BookStore {
 			System.out.printf(" > %s %s %s\n", sdf.format(rent.getRentDate()), rent.getBook().getTitle(), isBack);
 		}
 	}
-
+	
+	/**
+	 * <p>반납 기능
+	 */
 	public void rentalBack() { // 5
 
 		if (loginedUser == null) {

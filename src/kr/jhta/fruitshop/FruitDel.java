@@ -4,18 +4,16 @@ import java.util.Date;
 // 배송정보
 public class FruitDel {
 	private FruitCustomer fruitcustomer;
-	private Fruit Fruit;
+	private Fruit fruit;
 	private Date delDate;
-	private boolean isDel;
 	
 	public FruitDel() {}
 
 	public FruitDel(FruitCustomer fruitcustomer, Fruit fruit, Date delDate, boolean isDel) {
 		super();
 		this.fruitcustomer = fruitcustomer;
-		Fruit = fruit;
+		this.fruit = fruit;
 		this.delDate = delDate;
-		this.isDel = isDel;
 	}
 
 	public FruitCustomer getFruitcustomer() {
@@ -27,11 +25,11 @@ public class FruitDel {
 	}
 
 	public Fruit getFruit() {
-		return Fruit;
+		return fruit;
 	}
 
 	public void setFruit(Fruit fruit) {
-		Fruit = fruit;
+		this.fruit = fruit;
 	}
 
 	public Date getDelDate() {
@@ -40,13 +38,5 @@ public class FruitDel {
 
 	public void setDelDate(Date delDate) {
 		this.delDate = delDate;
-	}
-
-	public boolean isDel() {
-		return isDel;
-	}
-
-	public void setDel(boolean isDel) {
-		this.isDel = isDel;
 	}
 }
